@@ -1,0 +1,27 @@
+GET http://localhost:8080/all-movies
+
+###
+POST http://localhost:8080/add-movie
+Content-Type: application/json 
+
+{
+    "titulo_do_filme": "it: a coisa",
+    "genero": "terror",
+    "duracao": "2h05",
+    "classificação_etaria": "18"
+}
+
+###
+DELETE http://localhost:8080/delete-movie/3
+
+###
+PUT http://localhost:8080/update-movie/9
+Content-Type: application/json
+
+{
+    "titulo_do_filme": "it: a coisa",
+    "genero": "terror",
+    "duracao": "2h05",
+    "classificação_etaria": "18"
+}
+
