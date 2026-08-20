@@ -1,5 +1,6 @@
 import express from "express"
 import mysql2 from "mysql2"
+import cors from "cors"
 
 const database = mysql2.createPool({
     host: "benserverplex.ddns.net",
@@ -12,8 +13,8 @@ const database = mysql2.createPool({
 const app = express()
 
 app.use(express.json())
-
-app.get("/all-movies", (request, response) => {
+app.use(cors())
+app.get("/", (request, response) => {
     const selectCommand = "SELECT * FROM filmes_Miguel"
 
     database.query(selectCommand, (error, data) => {
