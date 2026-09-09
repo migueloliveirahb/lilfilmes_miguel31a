@@ -26,7 +26,7 @@ async function cadastrarFilme() {
         body: JSON.stringify(filme)
     }
 
-    const resposta = await fetch("http://localhost:8080/add-movie", informacoesAEnviar)
+    const resposta = await fetch("https://lilfilmes-miguel31a.vercel.app/add-movie", informacoesAEnviar)
     const mensagemDecifrada = await resposta.json()
 
     alert(mensagemDecifrada.message)
