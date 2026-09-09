@@ -12,8 +12,8 @@ async function cadastrarFilme() {
     const filme = {
         title: inputTitle.value,
         gender: inputGender.value,
-        ageLimit: inputAgeLimit.valueAsNumber,
-        duration: inputDuration.valueAsNumber
+        ageLimit: inputAgeLimit.value,
+        duration: inputDuration.value
     }
 
     const informacoesAEnviar = {
@@ -24,7 +24,7 @@ async function cadastrarFilme() {
         body: JSON.stringify(filme)
     }
 
-    const resposta = await fetch("https://correcao-atv1-3bimestre.vercel.app/create-movie", informacoesAEnviar)
+    const resposta = await fetch("https://lilfilmes-miguel31a-goe4.vercel.app/", informacoesAEnviar)
     const mensagemDecifrada = await resposta.json()
 
     alert(mensagemDecifrada.message)
